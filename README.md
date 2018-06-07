@@ -1,2 +1,2 @@
-# RL78_G10_-
-RL78/G10 16pin(Ｒ５Ｆ１０Ｙ４７ＡＳＰ) samples
+# RL78_G10_R5F10Y47ASP samples  
+RL78/G10 16pin(R5F10Y47ASP) samples
