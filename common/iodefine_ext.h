@@ -274,4 +274,7 @@ union un_iicctl01 {
 #define CLD0 IICCTL01_bit.no5
 #define WUP0 IICCTL01_bit.no7
 
+#define TS00    TS0_bit.no0
+#define TT00    TT0_bit.no0
+
 #endif
