@@ -24,7 +24,7 @@
 /* Tool Version: 3.5.4                                                  */
 /* Date Generated: 2016/11/01                                           */
 /************************************************************************/
-
+#include <stdint.h>
 #ifndef __INTRINSIC_FUNCTIONS
 #define __INTRINSIC_FUNCTIONS
 
@@ -150,6 +150,36 @@ union un_iicctl01 {
 	__BITS8 BIT;
 };
 
+
+union un_smr00h {
+	uint8_t	smr00h;
+	__BITS8 BIT;
+};
+union un_smr00l {
+	uint8_t smr00l;
+	__BITS8 BIT;
+};
+union un_scr00h {
+	uint8_t scr00h;
+	__BITS8 BIT;
+};
+union un_scr00l {
+	uint8_t	scr00l;
+	__BITS8 BIT;
+};
+union un_sol0 {
+	uint8_t sol0;
+	__BITS8 BIT;
+};
+union un_so0 {
+	uint8_t so0;
+	__BITS8 BIT;
+};
+union un_ssr00 {
+	uint8_t ssr00;
+	__BITS8 BIT;
+};
+
 #define ADM2 (*(volatile union un_adm2 *)0xF0010).adm2
 #define ADM2_bit (*(volatile union un_adm2 *)0xF0010).BIT
 #define ADTES (*(volatile unsigned char *)0xF0013)
@@ -180,16 +210,21 @@ union un_iicctl01 {
 #define PER0_bit (*(volatile union un_per0 *)0xF00F0).BIT
 #define OSMC (*(volatile unsigned char *)0xF00F3)
 #define BCDADJ (*(volatile unsigned char *)0xF00FE)
-#define SSR00 (*(volatile unsigned char *)0xF0100)
+#define SSR00 (*(volatile union un_ssr00 *)0xF0100).ssr00
+#define SSR00_bit (*(volatile union un_ssr00 *)0xF0100).BIT
 #define SSR01 (*(volatile unsigned char *)0xF0102)
 #define SIR00 (*(volatile unsigned char *)0xF0108)
 #define SIR01 (*(volatile unsigned char *)0xF010A)
-#define SMR00L (*(volatile unsigned char *)0xF0110)
-#define SMR00H (*(volatile unsigned char *)0xF0111)
+#define SMR00L (*(volatile union un_smr00l *)0xF0110).smr00l
+#define SMR00L_bit (*(volatile union un_smr00l *)0xF0110).BIT
+#define SMR00H (*(volatile union un_smr00h *)0xF0111).smr00h
+#define SMR00H_bit (*(volatile union un_smr00h *)0xF0111).BIT
 #define SMR01L (*(volatile unsigned char *)0xF0112)
 #define SMR01H (*(volatile unsigned char *)0xF0113)
-#define SCR00L (*(volatile unsigned char *)0xF0118)
-#define SCR00H (*(volatile unsigned char *)0xF0119)
+#define SCR00L (*(volatile union un_scr00l *)0xF0118).scr00l
+#define SCR00L_bit (*(volatile union un_scr00l *)0xF0118).BIT
+#define SCR00H (*(volatile union un_scr00h *)0xF0119).scr00h
+#define SCR00H_bit (*(volatile union un_scr00h *)0xF0119).BIT
 #define SCR01L (*(volatile unsigned char *)0xF011A)
 #define SCR01H (*(volatile unsigned char *)0xF011B)
 #define SE0 (*(volatile union un_se0 *)0xF0120).se0
@@ -199,11 +234,13 @@ union un_iicctl01 {
 #define ST0 (*(volatile union un_st0 *)0xF0124).st0
 #define ST0_bit (*(volatile union un_st0 *)0xF0124).BIT
 #define SPS0 (*(volatile unsigned char *)0xF0126)
-#define SO0 (*(volatile unsigned char *)0xF0128)
+#define SO0 (*(volatile union un_so0 *)0xF0128).so0
+#define SO0_bit (*(volatile union un_so0 *)0xF0128).BIT
 #define CKO0 (*(volatile unsigned char *)0xF0129)
 #define SOE0 (*(volatile union un_soe0 *)0xF012A).soe0
 #define SOE0_bit (*(volatile union un_soe0 *)0xF012A).BIT
-#define SOL0 (*(volatile unsigned char *)0xF0134)
+#define SOL0 (*(volatile union un_sol0 *)0xF0134).sol0
+#define SOL0_bit (*(volatile union un_sol0 *)0xF0134).BIT
 #define TCR00L (*(volatile unsigned char *)0xF0180)
 #define TCR00H (*(volatile unsigned char *)0xF0181)
 #define TCR01L (*(volatile unsigned char *)0xF0182)
@@ -276,5 +313,19 @@ union un_iicctl01 {
 
 #define TS00    TS0_bit.no0
 #define TT00    TT0_bit.no0
+
+#define TSF00	SSR00_bit.no6
+#define	CKS00	SMR00H_bit.no7
+#define	MD000	SMR00L_bit.no0
+#define	PTC001	SCR00H_bit.no1
+#define	PTC000	SCR00H_bit.no0
+#define	DIR00	SCR00L_bit.no7
+#define	SLC001	SCR00L_bit.no5
+#define	SLC000	SCR00L_bit.no4
+#define SOE00	SOE0_bit.no0
+#define	SOL00	SOL0_bit.no0
+#define	SO00	SO0_bit.no0
+#define	SS00	SS0_bit.no0
+#define ST00	ST0_bit.no0
 
 #endif
