@@ -47,9 +47,12 @@ void INT_SRE0 (void) { }
  */
 void INT_TM01H (void) { }
 
+
+
 /*
  * INT_TM00 (0x12)
  */
+void INT_TM00() __attribute__((weak));
 void INT_TM00 (void) { }
 
 /*
