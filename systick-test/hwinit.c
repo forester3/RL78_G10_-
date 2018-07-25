@@ -70,7 +70,7 @@ void InitFmx(void)
 
 #define PRS0_FCLK4					(0x2)		// 	CK0x = flck/4
 #define	SPS0_FCLK4_FCLK4			((PRS0_FCLK4 << 4) | PRS0_FCLK4)	//	CK01=fclk/4, CK00=fclk/4
-#define SRM00H_CK00_SWTRG			(0x00)		//	CK00, software trigger only
+#define SMR00H_CK00_SWTRG			(0x00)		//	CK00, software trigger only
 #define SMR00L_UART_TC				(0x22)		//	UART mode, trans complete INT
 #define SCR00H_TX_NOP				(0x80)		//	tx only, non parity
 #define SCR00L_LSBF_STB1_8			(0x97)		//	lsb first, 1stop bit, 8bit
@@ -81,7 +81,7 @@ void InitFmx(void)
 void InitUart0(void)
 {
 	SPS0 = SPS0_FCLK4_FCLK4;
-	SMR00H = SRM00H_CK00_SWTRG;
+	SMR00H = SMR00H_CK00_SWTRG;
 	SMR00L = SMR00L_UART_TC;
 	SCR00H = SCR00H_TX_NOP;
 	SCR00L = SCR00L_LSBF_STB1_8;
