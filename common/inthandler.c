@@ -27,6 +27,7 @@ void INT_P1 (void) { }
 /*
  * INT_CSI00/INT_IIC00/INT_ST0 (0xA)
  */
+void INT_ST0() __attribute__((weak));
 void INT_ST0 (void) { }
 //void INT_CSI00 (void) { }
 //void INT_IIC00 (void) { }
@@ -46,8 +47,6 @@ void INT_SRE0 (void) { }
  * INT_TM01H (0x10)
  */
 void INT_TM01H (void) { }
-
-
 
 /*
  * INT_TM00 (0x12)
