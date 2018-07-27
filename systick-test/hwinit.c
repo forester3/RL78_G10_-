@@ -90,7 +90,6 @@ void InitUart0(void)
 	SO0 = SO0_SOUT1_SOUT0;
 	SOL0 = SOL0_NON_INV;									
 	SOE00 = 1;									//	serial output enable
-  	PMC0_bit.no0 = PM_CTRL_BIT_DIGITAL;         //  TXD0 digital
 	P0_bit.no0 = 1;								//	TXD0 
   	PM0_bit.no0 = PORT_MODE_BIT_OUTPUT;         //  TXD0 digital out
 	SS00 = 1;									//	TXD0 standby
