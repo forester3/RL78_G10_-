@@ -315,6 +315,7 @@ union un_ssr00 {
 #define TT00    TT0_bit.no0
 
 #define TSF00	SSR00_bit.no6
+#define TSF01	SSR01_bit.no6
 #define	CKS00	SMR00H_bit.no7
 #define	MD000	SMR00L_bit.no0
 #define	PTC001	SCR00H_bit.no1
