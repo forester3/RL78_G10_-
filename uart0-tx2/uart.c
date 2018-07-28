@@ -48,7 +48,6 @@ void InitUart0(void)
 	SO0 = SO0_SOUT1_SOUT0;
 	SOL0 = SOL0_NON_INV;									
 	SOE00 = 1;									//	serial output enable
-  	PMC0_bit.no0 = PM_CTRL_BIT_DIGITAL;         //  TXD0 digital
 	P0_bit.no0 = 1;								//	TXD0 
   	PM0_bit.no0 = PORT_MODE_BIT_OUTPUT;         //  TXD0 digital out
 	SS00 = 1;									//	TXD0 standby
@@ -72,18 +71,18 @@ int8_t uart0_cpy( char *src, uint8_t n )
     int8_t  i;
     char *s = src + 1;
 
-    if( (tx_len > 0 ) || (n > TX_BUFFER_SIZE) || (n == 0) )
+    if( (tx_len > 0) || (TSF00 == 1) || (n > TX_BUFFER_SIZE) || (n == 0) )
     {
         return( -1 );
     }
 
-    for( i = 1; i <= n; i++ )
+    for( i = n - 2; i >= 0; i-- )
     {
-        tx_buf[n-i] = *s;
+        tx_buf[i] = *s;
         s++;
     }
 
-    tx_len = n;
+    tx_len = n - 1;
     SDR00L = *src;
 
     return( n );
