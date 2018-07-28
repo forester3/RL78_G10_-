@@ -70,16 +70,6 @@ void InitFmx(void)
 }
 
 
-#define PRS0_FCLK4					(0x2)		// 	CK0x = flck/4
-#define	SPS0_FCLK4_FCLK4			((PRS0_FCLK4 << 4) | PRS0_FCLK4)	//	CK01=fclk/4, CK00=fclk/4
-#define SRM00H_CK00_SWTRG			(0x00)		//	CK00, software trigger only
-#define SMR00L_UART_TC				(0x22)		//	UART mode, trans complete INT
-#define SCR00H_TX_NOP				(0x80)		//	tx only, non parity
-#define SCR00L_LSBF_STB1_8			(0x97)		//	lsb first, 1stop bit, 8bit
-#define SO0_SOUT1_SOUT0				(0x00)		//	serial out 0 & 1
-#define SOL0_NON_INV				(0x00)		//	Non-inverted
-
-
 void HardwareSetup(void)
 {
 	InitFmx();
