@@ -35,6 +35,7 @@ void INT_ST0 (void) { }
 /*
  * INT_CSI01/INT_SR0 (0xC)
  */
+void INT_SR0() __attribute__((weak));
 void INT_SR0 (void) { }
 //void INT_CSI01 (void) { }
 
