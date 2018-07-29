@@ -1,5 +1,5 @@
 # systick_test project  
-This is 4th sample projet.  
+This is 4th sample project.  
 LED works blinking 1Hz at pin 11(port 0.2).  
 The uart TXD0( at pin 9 ) polling output every 100ms.  
 Output data is fixed data from 0x30, '0' to 0x36, '6'.  

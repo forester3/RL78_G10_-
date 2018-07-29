@@ -1,7 +1,7 @@
 # uart0_tx2 project  
-This is 5th sample projet.  
+This is 5th sample project.  
 The uart TXD0( at pin 9 ) outputs by intterupt.  
-The fixed output data of UART0 is as follows.
+The fixed output data of UART0 is as follows.  
 Three  
 TWO  
 1  

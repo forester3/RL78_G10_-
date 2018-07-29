@@ -1,5 +1,5 @@
 # uart0-tx1 project  
-This is third sample projet.  
+This is third sample project.  
 LED works blinking 1.2Hz at pin 11(port 0.2).  
 You can connect LED through  around 1k ohm from 5V.  
 This sample works reset voltage at 4.2V.  
